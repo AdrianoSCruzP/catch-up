@@ -1,14 +1,9 @@
 export class Article {
-    constructor() {
-        this.title = '';
-        this.description = '';
-        this.url = '';
-        this.urlToImage = '';
-        this.source = {
-            id: '',
-            name: '',
-            url: '',
-            urlToLogo: ''
-        }
+    constructor(title = '', description = '', url = '', urlToImage = '', source = null) {
+        this.title = title;
+        this.description = description;
+        this.url = url;
+        this.urlToImage = urlToImage;
+        this.source = source;
     }
 }
