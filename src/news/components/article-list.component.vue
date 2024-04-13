@@ -1,5 +1,5 @@
 <script>
-import ArticleCard from "../../news/components/article-card.component.vue";
+import ArticleCard from "@/news/components/article-card.component.vue";
 export default {
     name: "article-list",
     components: {ArticleCard},

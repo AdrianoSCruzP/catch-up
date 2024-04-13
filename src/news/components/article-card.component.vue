@@ -1,5 +1,5 @@
 <script>
-import { Article } from "../model/article.entity.js";
+import { Article } from "@/news/model/article.entity.js";
 export default {
     name: "article-card",
     props: {

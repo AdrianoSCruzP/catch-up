@@ -1,5 +1,5 @@
 <script>
-import {NewsApiService} from "../services/news-api.service.js";
+import {NewsApiService} from "@/news/services/news-api.service.js";
 export default {
     name: "side-menu",
     props: {
@@ -18,9 +18,9 @@ export default {
                 this.sources = response.data.sources;
                 this.sources.forEach(source => {
                     source.urlToLogo = this.newsApi.getUrlToLogo(source);
-                    console.log('data: ');
-                    console.log(response.data.sources);
                 });
+                console.log('data: ');
+                console.log(response.data.sources);
             })
             .catch(e => this.errors.push(e));
     },
@@ -31,8 +31,8 @@ export default {
         isVisible() {
             return this.visible;
         },
-        onClose() {
-            this.$emit('close');
+        onSideBarClosed() {
+            this.$emit('sidebar-closed');
         },
     }
 }
@@ -41,7 +41,7 @@ export default {
 <template>
     <pv-sidebar v-bind:visible="visible">
         <template #header>
-            <pv-button icon="pi pi-times" label="" text @click="onClose"></pv-button>
+            <pv-button icon="pi pi-times" label="" text @click="onSideBarClosed"></pv-button>
         </template>
         <div v-for="source in sources" class="m-4">
             <div class="flex align-content-start flex-wrap"
