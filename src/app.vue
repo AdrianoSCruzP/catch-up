@@ -5,9 +5,10 @@ import ArticleList from "@/news/components/article-list.component.vue";
 import UnavailableContent from "@/news/components/unavailable-content.component.vue";
 import FooterContent from "@/public/components/footer-content.component.vue";
 import {Article} from "@/news/model/article.entity.js";
+import LanguageSwitcher from "@/public/components/language-switcher.component.vue";
 export default {
     name: 'App',
-    components: {ArticleList, FooterContent, UnavailableContent, SideMenu},
+    components: {LanguageSwitcher, ArticleList, FooterContent, UnavailableContent, SideMenu},
     data() {
         return {
             sidebarVisible: false,
@@ -72,6 +73,9 @@ export default {
                                text @click="toggleSidebar"></pv-button>
                     <side-menu v-model:visible="sidebarVisible" v-on:sidebar-closed="toggleSidebar"
                                v-on:source-selected="setSource"></side-menu>
+                </template>
+                <template #end>
+                    <language-switcher></language-switcher>
                 </template>
             </pv-menubar>
         </div>

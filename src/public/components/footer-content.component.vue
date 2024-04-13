@@ -11,9 +11,9 @@ export default {
         </div>
         <div class="col-12 ml-3 mt-3 align-items-center justify-content-center">
             <p>
-                Made with <i class="pi pi-heart text-red-50"/>
-                using <a class="text-white" href="https://primevue.org/" target="_blank">PrimeVue</a>
-                by ACME Developer Team
+                {{ $t('authoring-phrase.intro') }} <i class="pi pi-heart text-red-50"/>
+                {{ $t('authoring-phrase.use') }} <a class="text-white" href="https://primevue.org/" target="_blank">PrimeVue</a>
+                {{ $t('authoring-phrase.author', {brand: 'ACME'}) }}
             </p>
         </div>
     </div>

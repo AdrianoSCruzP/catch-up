@@ -1,5 +1,8 @@
 import './assets/main.css'
 
+// Add i18n support
+import i18n from "@/i18n.js";
+
 // Add PrimeVue
 import PrimeVue from "primevue/config";
 
@@ -34,4 +37,5 @@ createApp(App)
     .component('pv-menu', Menu)
     .component('pv-menubar', MenuBar)
     .component('pv-toolbar', Toolbar)
+    .use(i18n)
     .mount('#app')
